@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>IIUC - Dept. of CCE Mid-Term Exam Routine & Course Portal Autumn 2026</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: 'var(--brand-50)',
+              100: 'var(--brand-100)',
+              500: 'var(--brand-500)',
+              600: 'var(--brand-600)',
+              700: 'var(--brand-700)',
+              800: 'var(--brand-800)',
+              900: 'var(--brand-900)',
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' },
+            },
+            glow: {
+              '0%': { boxShadow: '0 0 15px rgba(220,38,38,0.3)' },
+              '100%': { boxShadow: '0 0 30px rgba(220,38,38,0.7)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* CSS Variables for Dynamic Color Theme Switcher */
+    :root[data-theme="dark-red"] {
+      --bg-gradient: radial-gradient(circle at top left, #2d0607, #130203, #080101);
+      --card-bg: rgba(35, 8, 10, 0.65);
+      --card-border: rgba(239, 68, 68, 0.25);
+      --card-hover-border: rgba(248, 113, 113, 0.5);
+      --text-main: #fee2e2;
+      --text-muted: #fca5a5;
+      --brand-primary: #dc2626;
+      --brand-secondary: #991b1b;
+      --accent-glow: rgba(220, 38, 38, 0.35);
+      --nav-bg: rgba(25, 4, 5, 0.85);
+      --badge-bg: rgba(153, 27, 27, 0.4);
+    }
+
+    :root[data-theme="black"] {
+      --bg-gradient: radial-gradient(circle at top left, #18181b, #09090b, #000000);
+      --card-bg: rgba(24, 24, 27, 0.7);
+      --card-border: rgba(63, 63, 70, 0.5);
+      --card-hover-border: rgba(161, 161, 170, 0.6);
+      --text-main: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --brand-primary: #3f3f46;
+      --brand-secondary: #27272a;
+      --accent-glow: rgba(255, 255, 255, 0.15);
+      --nav-bg: rgba(9, 9, 11, 0.85);
+      --badge-bg: rgba(39, 39, 42, 0.6);
+    }
+
+    :root[data-theme="classic-green"] {
+      --bg-gradient: radial-gradient(circle at top left, #022c22, #064e3b, #021a12);
+      --card-bg: rgba(6, 78, 59, 0.55);
+      --card-border: rgba(16, 185, 129, 0.3);
+      --card-hover-border: rgba(52, 211, 153, 0.6);
+      --text-main: #ecfdf5;
+      --text-muted: #6ee7b7;
+      --brand-primary: #059669;
+      --brand-secondary: #047857;
+      --accent-glow: rgba(16, 185, 129, 0.35);
+      --nav-bg: rgba(2, 44, 34, 0.85);
+      --badge-bg: rgba(4, 120, 87, 0.4);
+    }
+
+    :root[data-theme="light-aqua"] {
+      --bg-gradient: radial-gradient(circle at top left, #0f4c5c, #0d3b48, #051e26);
+      --card-bg: rgba(15, 76, 92, 0.55);
+      --card-border: rgba(45, 212, 191, 0.35);
+      --card-hover-border: rgba(94, 234, 212, 0.65);
+      --text-main: #f0fdfa;
+      --text-muted: #5eead4;
+      --brand-primary: #0d9488;
+      --brand-secondary: #115e59;
+      --accent-glow: rgba(20, 184, 166, 0.4);
+      --nav-bg: rgba(10, 48, 58, 0.85);
+      --badge-bg: rgba(17, 94, 89, 0.45);
+    }
+
+    :root[data-theme="brown"] {
+      --bg-gradient: radial-gradient(circle at top left, #2c1a11, #1a0f0a, #0b0604);
+      --card-bg: rgba(44, 26, 17, 0.65);
+      --card-border: rgba(217, 119, 6, 0.35);
+      --card-hover-border: rgba(251, 191, 36, 0.6);
+      --text-main: #fffbeb;
+      --text-muted: #fde68a;
+      --brand-primary: #b45309;
+      --brand-secondary: #78350f;
+      --accent-glow: rgba(217, 119, 6, 0.35);
+      --nav-bg: rgba(26, 15, 10, 0.85);
+      --badge-bg: rgba(120, 53, 15, 0.5);
+    }
+
+    :root[data-theme="light-yellow"] {
+      --bg-gradient: radial-gradient(circle at top left, #451a03, #290f02, #140701);
+      --card-bg: rgba(69, 26, 3, 0.6);
+      --card-border: rgba(245, 158, 11, 0.35);
+      --card-hover-border: rgba(252, 211, 77, 0.65);
+      --text-main: #fefce8;
+      --text-muted: #fef08a;
+      --brand-primary: #d97706;
+      --brand-secondary: #92400e;
+      --accent-glow: rgba(245, 158, 11, 0.4);
+      --nav-bg: rgba(41, 15, 2, 0.85);
+      --badge-bg: rgba(146, 64, 14, 0.5);
+    }
+
+    body {
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      transition: background 0.5s ease, color 0.5s ease;
+      overflow-x: hidden;
+    }
+
+    .glass-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .glass-card:hover {
+      border-color: var(--card-hover-border);
+      box-shadow: 0 12px 40px 0 var(--accent-glow);
+    }
+
+    .glass-nav {
+      background: var(--nav-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .text-theme-muted {
+      color: var(--text-muted);
+    }
+
+    .bg-theme-badge {
+      background-color: var(--badge-bg);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.3);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--brand-primary);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--card-hover-border);
+    }
+  </style>
+</head>
+<body data-theme="dark-red" class="relative pb-24">
+
+  <!-- Top Floating Fluid Island Navbar -->
+  <header id="floatingNavbar" class="fixed top-3 inset-x-0 z-50 max-w-6xl mx-auto px-4 transition-all duration-300 transform">
+    <div class="glass-nav rounded-2xl px-4 py-2.5 flex items-center justify-between gap-3">
+      
+      <!-- Brand & Home Button -->
+      <button onclick="navigateTo('home')" class="flex items-center gap-2.5 group focus:outline-none">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-600 to-rose-900 flex items-center justify-center text-white font-bold shadow-lg group-hover:scale-105 transition-transform">
+          <i class="fa-solid font-mono text-lg">IIUC</i>
+        </div>
+        <div class="text-left hidden sm:block">
+          <h1 class="text-sm font-bold tracking-wide uppercase leading-tight">CCE Examination</h1>
+          <p class="text-xs text-theme-muted font-mono">Mid-Term Autumn '26</p>
+        </div>
+      </button>
+
+      <!-- Search Bar in Navbar -->
+      <div class="relative flex-1 max-w-md mx-2">
+        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-theme-muted text-xs"></i>
+        <input type="text" id="globalSearchInput" oninput="handleGlobalSearch(this.value)" placeholder="Search subject, course code, instructor..." class="w-full bg-black/40 border border-white/10 rounded-xl pl-9 pr-8 py-1.5 text-xs text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-red-500/50 transition-all">
+        <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-xs text-white/50 hover:text-white">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Quick Nav Links & Dynamic Theme Cycler Button -->
+      <div class="flex items-center gap-1.5 sm:gap-2">
+        
+        <button onclick="navigateTo('routine')" class="nav-btn px-3 py-1.5 rounded-lg text-xs font-semibold hover:bg-white/10 transition-colors flex items-center gap-1.5" title="Full Routine">
+          <i class="fa-solid fa-calendar-days text-red-400"></i>
+          <span class="hidden md:inline">Routine</span>
+        </button>
+
+        <button onclick="navigateTo('my-schedule')" class="nav-btn px-3 py-1.5 rounded-lg text-xs font-semibold hover:bg-white/10 transition-colors relative flex items-center gap-1.5" title="My Saved Routine">
+          <i class="fa-solid fa-bookmark text-amber-400"></i>
+          <span class="hidden md:inline">Saved</span>
+          <span id="savedCountBadge" class="hidden absolute -top-1 -right-1 bg-red-600 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+        </button>
+
+        <button onclick="navigateTo('courses')" class="nav-btn px-3 py-1.5 rounded-lg text-xs font-semibold hover:bg-white/10 transition-colors flex items-center gap-1.5" title="All 116 Courses">
+          <i class="fa-solid fa-book-open text-cyan-400"></i>
+          <span class="hidden md:inline">Courses</span>
+        </button>
+
+        <!-- Theme Switcher Button with Cycle Options -->
+        <button id="themeCycleBtn" onclick="cycleTheme()" class="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 text-xs font-bold transition-all flex items-center gap-2" title="Click to Cycle Themes">
+          <i id="themeIcon" class="fa-solid fa-palette text-amber-300 animate-pulse"></i>
+          <span id="themeLabel" class="hidden lg:inline text-[11px] font-mono uppercase tracking-wider">Dark Red</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="max-w-6xl mx-auto px-4 pt-24 pb-16 min-h-screen">
+
+    <!-- Global Instant Search Overlay Panel -->
+    <div id="searchOverlay" class="hidden glass-card rounded-2xl p-4 sm:p-6 mb-8 border-2 border-red-500/40 shadow-2xl animate-fade-in" data-aos="fade-down">
+      <div class="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-theme-muted flex items-center gap-2">
+          <i class="fa-solid fa-filter text-red-400"></i> Search Results
+        </h3>
+        <span id="searchResultCount" class="text-xs font-mono bg-red-950/80 px-2.5 py-1 rounded-md text-red-300">0 matches</span>
+      </div>
+      <div id="searchResultsList" class="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-[60vh] overflow-y-auto pr-1">
+        <!-- Dynamic search results populated by JS -->
+      </div>
+    </div>
+
+    <!-- VIEW 1: HOME DASHBOARD VIEW -->
+    <section id="view-home" class="page-view space-y-8">
+      
+      <!-- Hero Banner -->
+      <div class="glass-card rounded-3xl p-6 sm:p-10 relative overflow-hidden text-center sm:text-left" data-aos="zoom-in">
+        <div class="absolute -right-10 -top-10 w-64 h-64 bg-red-600/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+          
+          <div class="lg:col-span-2 space-y-4">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-theme-badge border border-red-500/30 text-xs font-mono tracking-wide text-red-300">
+              <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+              PUBLISHED: 27.09.2026
+            </div>
+            <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight">
+              International Islamic University Chittagong
+            </h1>
+            <h2 class="text-lg sm:text-2xl font-bold text-red-400">
+              Department of Computer & Communication Engineering
+            </h2>
+            <p class="text-sm text-theme-muted max-w-xl">
+              Schedule of Mid-Term Examination, Autumn 2026. Browse exam slots, search course syllabus catalog, filter schedules, and build your personalized exam roadmap.
+            </p>
+
+            <div class="flex flex-wrap gap-3 pt-2 justify-center sm:justify-start">
+              <button onclick="navigateTo('routine')" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-500 hover:to-rose-600 text-white font-bold text-sm shadow-lg shadow-red-900/40 hover:scale-105 transition-all flex items-center gap-2">
+                <i class="fa-solid fa-calendar-alt"></i> View Full Routine
+              </button>
+              <button onclick="navigateTo('courses')" class="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 text-white font-semibold text-sm transition-all flex items-center gap-2">
+                <i class="fa-solid fa-list-check"></i> Course Catalog (A1-A116)
+              </button>
+            </div>
+          </div>
+
+          <!-- Countdown Timer Card -->
+          <div class="glass-card rounded-2xl p-5 border border-red-500/30 bg-black/40 text-center space-y-3">
+            <h3 class="text-xs uppercase font-bold text-theme-muted tracking-widest">Mid-Term Starts In</h3>
+            <div id="countdownTimer" class="grid grid-cols-4 gap-2 text-center font-mono">
+              <div class="bg-red-950/60 p-2 rounded-lg border border-red-500/20">
+                <span id="cd-days" class="block text-xl font-bold text-red-400">00</span>
+                <span class="text-[10px] text-white/50 uppercase">Days</span>
+              </div>
+              <div class="bg-red-950/60 p-2 rounded-lg border border-red-500/20">
+                <span id="cd-hours" class="block text-xl font-bold text-red-400">00</span>
+                <span class="text-[10px] text-white/50 uppercase">Hours</span>
+              </div>
+              <div class="bg-red-950/60 p-2 rounded-lg border border-red-500/20">
+                <span id="cd-mins" class="block text-xl font-bold text-red-400">00</span>
+                <span class="text-[10px] text-white/50 uppercase">Mins</span>
+              </div>
+              <div class="bg-red-950/60 p-2 rounded-lg border border-red-500/20">
+                <span id="cd-secs" class="block text-xl font-bold text-red-400">00</span>
+                <span class="text-[10px] text-white/50 uppercase">Secs</span>
+              </div>
+            </div>
+            <p class="text-xs text-theme-muted pt-1">First Exam: <span class="text-white font-semibold">30 Sept 2026 (Wednesday)</span></p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Quick Stats Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade-up">
+        <div class="glass-card rounded-2xl p-4 text-center">
+          <i class="fa-solid fa-calendar-check text-2xl text-red-400 mb-2"></i>
+          <div class="text-2xl font-black font-mono">13</div>
+          <div class="text-xs text-theme-muted uppercase font-semibold">Exam Days</div>
+        </div>
+        <div class="glass-card rounded-2xl p-4 text-center">
+          <i class="fa-solid fa-clock text-2xl text-amber-400 mb-2"></i>
+          <div class="text-2xl font-black font-mono">2</div>
+          <div class="text-xs text-theme-muted uppercase font-semibold">Daily Slots</div>
+        </div>
+        <div class="glass-card rounded-2xl p-4 text-center">
+          <i class="fa-solid fa-graduation-cap text-2xl text-emerald-400 mb-2"></i>
+          <div class="text-2xl font-black font-mono">116</div>
+          <div class="text-xs text-theme-muted uppercase font-semibold">Total Courses</div>
+        </div>
+        <div class="glass-card rounded-2xl p-4 text-center">
+          <i class="fa-solid fa-building-columns text-2xl text-cyan-400 mb-2"></i>
+          <div class="text-2xl font-black font-mono">CCE</div>
+          <div class="text-xs text-theme-muted uppercase font-semibold">Department</div>
+        </div>
+      </div>
+
+      <!-- Quick Action Navigation Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-aos="fade-up">
+        
+        <div onclick="navigateTo('routine')" class="glass-card rounded-2xl p-6 cursor-pointer group hover:scale-[1.02] transition-transform">
+          <div class="w-12 h-12 rounded-xl bg-red-600/20 text-red-400 flex items-center justify-center text-xl font-bold mb-4 group-hover:bg-red-600 group-hover:text-white transition-colors">
+            <i class="fa-solid fa-table-list"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Exam Schedule</h3>
+          <p class="text-xs text-theme-muted mb-4">View dates, time slots (1st & 2nd slots), subject codes, and add exams to your personal timetable.</p>
+          <span class="text-xs font-semibold text-red-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            Browse Routine <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </div>
+
+        <div onclick="navigateTo('my-schedule')" class="glass-card rounded-2xl p-6 cursor-pointer group hover:scale-[1.02] transition-transform">
+          <div class="w-12 h-12 rounded-xl bg-amber-600/20 text-amber-400 flex items-center justify-center text-xl font-bold mb-4 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+            <i class="fa-solid fa-user-gear"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">My Exam Roadmap</h3>
+          <p class="text-xs text-theme-muted mb-4">Filter down to only your enrolled subjects, check exam clashes, and print your personal exam slip.</p>
+          <span class="text-xs font-semibold text-amber-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            Manage Enrolled <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </div>
+
+        <div onclick="navigateTo('committee')" class="glass-card rounded-2xl p-6 cursor-pointer group hover:scale-[1.02] transition-transform">
+          <div class="w-12 h-12 rounded-xl bg-cyan-600/20 text-cyan-400 flex items-center justify-center text-xl font-bold mb-4 group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+            <i class="fa-solid fa-file-signature"></i>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Official Notice & Board</h3>
+          <p class="text-xs text-theme-muted mb-4">Official publication info signed by Convener, Members, and Chairman of Exam Routine Committee 2026.</p>
+          <span class="text-xs font-semibold text-cyan-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            View Official Info <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- VIEW 2: ROUTINE SCHEDULE VIEW -->
+    <section id="view-routine" class="page-view hidden space-y-6">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 glass-card rounded-2xl p-6" data-aos="fade-down">
+        <div>
+          <div class="flex items-center gap-2 text-xs text-theme-muted font-mono mb-1">
+            <button onclick="navigateTo('home')" class="hover:text-white">Home</button>
+            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            <span class="text-red-400">Mid-Term Schedule</span>
+          </div>
+          <h2 class="text-2xl font-extrabold">Mid-Term Examination Routine - Autumn 2026</h2>
+          <p class="text-xs text-theme-muted">Department of Computer & Communication Engineering (Published: 27.09.26)</p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="flex flex-wrap items-center gap-2">
+          <select id="slotFilter" onchange="filterRoutine()" class="bg-black/40 border border-white/10 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-red-500">
+            <option value="all">All Slots</option>
+            <option value="slot1">1st Slot (09:30 am - 11:00 am)</option>
+            <option value="slot2">2nd Slot (02:30 pm - 04:00 pm)</option>
+          </select>
+
+          <input type="text" id="routineSearchInput" oninput="filterRoutine()" placeholder="Filter code/title..." class="bg-black/40 border border-white/10 rounded-xl px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-red-500 max-w-[160px]">
+        </div>
+      </div>
+
+      <!-- Time Slots Info Banner -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-l-red-500 flex items-center justify-between">
+          <div>
+            <span class="text-xs font-bold text-red-400 uppercase font-mono">1st Time Slot</span>
+            <h4 class="text-lg font-extrabold">09:30 AM to 11:00 AM</h4>
+          </div>
+          <i class="fa-solid fa-sun text-2xl text-amber-400/80"></i>
+        </div>
+        <div class="glass-card rounded-2xl p-4 border-l-4 border-l-rose-500 flex items-center justify-between">
+          <div>
+            <span class="text-xs font-bold text-rose-400 uppercase font-mono">2nd Time Slot</span>
+            <h4 class="text-lg font-extrabold">02:30 PM to 04:00 PM</h4>
+          </div>
+          <i class="fa-solid fa-cloud-sun text-2xl text-indigo-400/80"></i>
+        </div>
+      </div>
+
+      <!-- Routine Table / Cards container -->
+      <div id="routineCardsContainer" class="space-y-4">
+        <!-- Javascript dynamic render -->
+      </div>
+
+    </section>
+
+    <!-- VIEW 3: MY ENROLLED SCHEDULE VIEW -->
+    <section id="view-my-schedule" class="page-view hidden space-y-6">
+      
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 glass-card rounded-2xl p-6" data-aos="fade-down">
+        <div>
+          <div class="flex items-center gap-2 text-xs text-theme-muted font-mono mb-1">
+            <button onclick="navigateTo('home')" class="hover:text-white">Home</button>
+            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            <span class="text-amber-400">My Schedule Roadmap</span>
+          </div>
+          <h2 class="text-2xl font-extrabold">Personal Exam Schedule Tracker</h2>
+          <p class="text-xs text-theme-muted">Select courses from full routine to construct your personal exam timetable.</p>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button onclick="window.print()" class="px-4 py-2 rounded-xl bg-amber-600/80 hover:bg-amber-600 text-white text-xs font-bold transition-all flex items-center gap-2">
+            <i class="fa-solid fa-print"></i> Print / Save PDF
+          </button>
+          <button onclick="clearSavedExams()" class="px-3 py-2 rounded-xl bg-red-950/80 hover:bg-red-900 border border-red-500/30 text-red-300 text-xs font-bold transition-all">
+            Clear All
+          </button>
+        </div>
+      </div>
+
+      <!-- Exam Clash Warning Box if applicable -->
+      <div id="clashWarningBox" class="hidden glass-card rounded-2xl p-4 border border-rose-500/50 bg-rose-950/40 text-rose-200 flex items-center gap-3">
+        <i class="fa-solid fa-triangle-exclamation text-2xl text-rose-400 animate-bounce"></i>
+        <div>
+          <h4 class="text-sm font-bold">Exam Schedule Conflict Detected!</h4>
+          <p id="clashWarningText" class="text-xs text-rose-300">You have multiple exams scheduled in the same time slot.</p>
+        </div>
+      </div>
+
+      <!-- Saved Exams List Container -->
+      <div id="mySavedExamsContainer" class="space-y-4">
+        <!-- Dynamic populated JS content -->
+      </div>
+
+    </section>
+
+    <!-- VIEW 4: ALL COURSES CATALOG VIEW (A1 - A116) -->
+    <section id="view-courses" class="page-view hidden space-y-6">
+      
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 glass-card rounded-2xl p-6" data-aos="fade-down">
+        <div>
+          <div class="flex items-center gap-2 text-xs text-theme-muted font-mono mb-1">
+            <button onclick="navigateTo('home')" class="hover:text-white">Home</button>
+            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            <span class="text-cyan-400">Course Catalog</span>
+          </div>
+          <h2 class="text-2xl font-extrabold">Complete Departmental Courses (A1 - A116)</h2>
+          <p class="text-xs text-theme-muted">Department of Computer & Communication Engineering (CCE) Syllabus Index</p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <!-- Filter by Year/Level -->
+          <select id="levelFilter" onchange="filterCourseCatalog()" class="bg-black/40 border border-white/10 rounded-xl px-3 py-2 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-cyan-500">
+            <option value="all">All Levels</option>
+            <option value="1">1000 Level (1st Year)</option>
+            <option value="2">2000 Level (2nd Year)</option>
+            <option value="3">3000 Level (3rd Year)</option>
+            <option value="4">4000 Level (4th Year)</option>
+          </select>
+
+          <!-- Search in Course Catalog -->
+          <input type="text" id="catalogSearchInput" oninput="filterCourseCatalog()" placeholder="Search code/title..." class="bg-black/40 border border-white/10 rounded-xl px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-cyan-500 max-w-[180px]">
+        </div>
+      </div>
+
+      <!-- Course Cards Container Grid -->
+      <div id="courseCatalogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Dynamically rendered JS courses -->
+      </div>
+
+    </section>
+
+    <!-- VIEW 5: ROUTINE COMMITTEE & OFFICIAL NOTICE VIEW -->
+    <section id="view-committee" class="page-view hidden space-y-6">
+      
+      <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6" data-aos="fade-up">
+        <div class="text-center space-y-2 border-b border-white/10 pb-6">
+          <div class="inline-block px-3 py-1 bg-red-950/60 border border-red-500/30 rounded-full text-xs font-mono text-red-300">
+            OFFICIAL NOTICE BOARD
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold">International Islamic University Chittagong</h2>
+          <h3 class="text-lg font-bold text-red-400">Department of Computer & Communication Engineering</h3>
+          <p class="text-xs text-theme-muted">Published Date: 27.09.26 | Schedule of Mid-Term Examination, Autumn 2026</p>
+        </div>
+
+        <div class="prose max-w-none text-xs sm:text-sm text-theme-muted space-y-4">
+          <p class="leading-relaxed">
+            All students of the Department of Computer & Communication Engineering (CCE) are hereby notified that the Mid-Term Examination for Autumn 2026 will commence on <strong>30th September 2026 (Wednesday)</strong> and conclude on <strong>14th October 2026 (Wednesday)</strong> according to the published schedule.
+          </p>
+          <div class="bg-black/40 border border-white/10 rounded-xl p-4 space-y-2">
+            <h4 class="font-bold text-white flex items-center gap-2">
+              <i class="fa-solid fa-circle-info text-amber-400"></i> Important Examination Rules:
+            </h4>
+            <ul class="list-disc list-inside space-y-1 text-xs">
+              <li>Students must bring their official Student ID card and Admit Card to the exam hall.</li>
+              <li>1st Slot Exam: 09:30 AM – 11:00 AM (Entry allowed until 09:40 AM).</li>
+              <li>2nd Slot Exam: 02:30 PM – 04:00 PM (Entry allowed until 02:40 PM).</li>
+              <li>Mobile phones, smartwatches, and programmable devices are strictly prohibited inside the hall.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Routine Committee Signatures -->
+        <div class="pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+          
+          <div class="glass-card rounded-xl p-4 bg-black/30 border border-white/10">
+            <div class="h-10 flex items-center justify-center font-mono text-xs italic text-red-300 border-b border-white/10 mb-2">
+              [Signed]
+            </div>
+            <h4 class="text-xs font-bold text-white">Md. Imam Uddin Forkan</h4>
+            <p class="text-[11px] text-theme-muted">Lecturer & Convener</p>
+            <p class="text-[10px] text-theme-muted/80">Exam Routine Committee-2026</p>
+          </div>
+
+          <div class="glass-card rounded-xl p-4 bg-black/30 border border-white/10">
+            <div class="h-10 flex items-center justify-center font-mono text-xs italic text-red-300 border-b border-white/10 mb-2">
+              [Signed]
+            </div>
+            <h4 class="text-xs font-bold text-white">Tania Sultana</h4>
+            <p class="text-[11px] text-theme-muted">Lecturer & Member</p>
+            <p class="text-[10px] text-theme-muted/80">Exam Routine Committee-2026</p>
+          </div>
+
+          <div class="glass-card rounded-xl p-4 bg-black/30 border border-white/10">
+            <div class="h-10 flex items-center justify-center font-mono text-xs italic text-red-300 border-b border-white/10 mb-2">
+              [Signed]
+            </div>
+            <h4 class="text-xs font-bold text-white">Mirza Raquib / Engr. Hassan Jaki</h4>
+            <p class="text-[11px] text-theme-muted">Lecturer & Member</p>
+            <p class="text-[10px] text-theme-muted/80">Exam Routine Committee-2026</p>
+          </div>
+
+          <div class="glass-card rounded-xl p-4 bg-black/30 border border-white/10">
+            <div class="h-10 flex items-center justify-center font-mono text-xs italic text-red-300 border-b border-white/10 mb-2">
+              [Signed]
+            </div>
+            <h4 class="text-xs font-bold text-white">Prof. Engr. Md. Razu Ahmed</h4>
+            <p class="text-[11px] text-red-400 font-semibold">Chairman & Professor</p>
+            <p class="text-[10px] text-theme-muted/80">Dept. of CCE, IIUC</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Floating Scroll Controls (Scroll Top & Scroll Bottom) -->
+  <div class="fixed right-4 bottom-6 z-40 flex flex-col gap-2">
+    <button onclick="scrollToTop()" class="w-10 h-10 rounded-xl glass-nav hover:bg-white/20 text-white flex items-center justify-center shadow-xl hover:scale-110 transition-transform" title="Scroll To Top">
+      <i class="fa-solid fa-arrow-up text-sm"></i>
+    </button>
+    <button onclick="scrollToBottom()" class="w-10 h-10 rounded-xl glass-nav hover:bg-white/20 text-white flex items-center justify-center shadow-xl hover:scale-110 transition-transform" title="Scroll To Bottom">
+      <i class="fa-solid fa-arrow-down text-sm"></i>
+    </button>
+  </div>
+
+  <!-- Custom Mobile/Desktop App Exit Confirmation Modal (Triggered on Back Press from Home) -->
+  <div id="exitModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in">
+    <div class="glass-card max-w-sm w-full rounded-2xl p-6 text-center space-y-4 border border-red-500/50 shadow-2xl">
+      <div class="w-14 h-14 rounded-2xl bg-red-600/20 text-red-400 flex items-center justify-center text-2xl mx-auto">
+        <i class="fa-solid fa-right-from-bracket"></i>
+      </div>
+      <h3 class="text-lg font-bold">Exit Application?</h3>
+      <p class="text-xs text-theme-muted">You are currently at the main home page. Are you sure you want to exit the CCE Portal?</p>
+      
+      <div class="flex gap-3 pt-2">
+        <button onclick="closeExitModal()" class="flex-1 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-bold transition-all">
+          Stay in App
+        </button>
+        <button onclick="confirmExit()" class="flex-1 py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-white text-xs font-bold shadow-lg transition-all">
+          Exit Now
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <script>
+    // Initialize AOS
+    AOS.init({ duration: 600, once: true });
+
+    // Core Dataset: Mid-Term Examination Routine Autumn 2026
+    const routineData = [
+      {
+        date: "30/09/26",
+        day: "Wednesday",
+        slot1: [
+          { code: "GEEM-1101", title: "Text of Ethics and Morality" },
+          { code: "CCE-4701", title: "Data Communication and Computer Networking" },
+          { code: "CCE-3501", title: "Microprocessor and Assembly Language" }
+        ],
+        slot2: [
+          { code: "URED-3604", title: "Life & Teaching of Prophet Muhammad (SAAW)" },
+          { code: "CCE-4805", title: "Compiler Design" }
+        ]
+      },
+      {
+        date: "01/10/26",
+        day: "Thursday",
+        slot1: [
+          { code: "URED-3503", title: "Political Thoughts and Social behavior" },
+          { code: "GEED-2302", title: "Science of Qur’an and Hadith" },
+          { code: "CCE-2401", title: "Numerical Methods" }
+        ],
+        slot2: [
+          { code: "GEED-1201", title: "Basic Principles of Islam (‘Aqeedah+ ‘Ibadah)" },
+          { code: "URIH-4701", title: "A Survey of Islamic History and Culture" }
+        ]
+      },
+      {
+        date: "03/10/26",
+        day: "Saturday",
+        slot1: [
+          { code: "GEEL-1106", title: "Advanced English" },
+          { code: "GEBL-2401", title: "Bangla Language & Literature" },
+          { code: "CCE-4801", title: "Fiber Optic Communication" }
+        ],
+        slot2: [
+          { code: "GEHE-3601", title: "History of Emergence of Bangladesh" },
+          { code: "CCE-2301", title: "Data Structures and Algorithm" }
+        ]
+      },
+      {
+        date: "04/10/26",
+        day: "Sunday",
+        slot1: [
+          { code: "CCE-4711", title: "Satellite Communication and Radar Navigation" }
+        ],
+        slot2: [
+          { code: "CCE-3511", title: "Electromagnetic Fields and Waves" }
+        ]
+      },
+      {
+        date: "05/10/26",
+        day: "Monday",
+        slot1: [
+          { code: "CCE-1103", title: "Basic Electrical Engineering" },
+          { code: "MATH-2401", title: "Mathematics-IV (Complex Variable Fourier Series, Laplace Transform & Fourier transform)" },
+          { code: "CCE-3611", title: "Digital Communication Engineering" }
+        ],
+        slot2: [
+          { code: "MATH-2301", title: "Mathematics-III (Matrices, Linear System of Equations and Vector Analysis)" },
+          { code: "CCE-4803", title: "Artificial Intelligence" }
+        ]
+      },
+      {
+        date: "06/10/26",
+        day: "Tuesday",
+        slot1: [
+          { code: "CCE-4705", title: "Operating System" }
+        ],
+        slot2: [
+          { code: "CCE-3505", title: "Database Management System" }
+        ]
+      },
+      {
+        date: "07/10/26",
+        day: "Wednesday",
+        slot1: [
+          { code: "CCE-1209", title: "Basic Electronics Engineering" },
+          { code: "CCE-3613", title: "Mobile & Wireless Communication" }
+        ],
+        slot2: [
+          { code: "CCE-2411", title: "Digital Logic Design" },
+          { code: "MGT-4701", title: "Industrial Management" }
+        ]
+      },
+      {
+        date: "08/10/26",
+        day: "Thursday",
+        slot1: [
+          { code: "CCE-2307", title: "Discrete Mathematics" },
+          { code: "ACC-3501", title: "Financial and Managerial Accounting" },
+          { code: "CCE-4719", title: "Internet of Things" }
+        ],
+        slot2: [
+          { code: "PHY-1101", title: "Physics I (Mechanics, Waves, Optics, Heat and thermodynamics)" }
+        ]
+      },
+      {
+        date: "10/10/26",
+        day: "Saturday",
+        slot1: [
+          { code: "PHY-1201", title: "Physics II (Electromagnetism, Properties of Matter & Modern Physics)" },
+          { code: "CCE-4707", title: "Microwave Engineering" },
+          { code: "CCE-3609", title: "Software Engineering" }
+        ],
+        slot2: [
+          { code: "LAW-4821", title: "Professional Ethics and Environmental Protection Law" },
+          { code: "CCE-2407", title: "Basic Communication Engineering" },
+          { code: "CCE-3509", title: "Computer Architecture" }
+        ]
+      },
+      {
+        date: "11/10/26",
+        day: "Sunday",
+        slot1: [
+          { code: "CHEM-2301", title: "Chemistry" }
+        ],
+        slot2: [
+          { code: "CCE-1105", title: "Computer Fundamentals & Programming" }
+        ]
+      },
+      {
+        date: "12/10/26",
+        day: "Monday",
+        slot1: [
+          { code: "CCE-3507", title: "System Analysis, Design and Development" },
+          { code: "CCE-3616", title: "Research Methodology" },
+          { code: "ECON-4701", title: "Principle of Economics" }
+        ],
+        slot2: [
+          { code: "CCE-1207", title: "Object Oriented Programming with JAVA" },
+          { code: "CCE-4825", title: "Cryptography and Network Security" },
+          { code: "STAT-2401", title: "Statistics" }
+        ]
+      },
+      {
+        date: "13/10/26",
+        day: "Tuesday",
+        slot1: [
+          { code: "CCE-2305", title: "Signals and Linear Systems" },
+          { code: "MATH-1101", title: "Mathematics-I (Differential and Integral Calculus)" }
+        ],
+        slot2: [
+          { code: "CCE-3503", title: "Information Theory and Error Correction" },
+          { code: "CCE-3601", title: "Digital Signal Processing" },
+          { code: "CCE-4829", title: "Machine Learning" }
+        ]
+      },
+      {
+        date: "14/10/26",
+        day: "Wednesday",
+        slot1: [
+          { code: "CCE-4800", title: "Project / Thesis (Proposal of 7th Semester)" }
+        ],
+        slot2: [
+          { code: "CCE-4800", title: "Project / Thesis (Progress of 8th Semester)" }
+        ]
+      }
+    ];
+
+    // Complete 116 Course Catalog Dataset (A1 - A116)
+    const coursesData = [
+      { sl: "A1", code: "CCE-1102", name: "Engineering Drawing Sessional", credit: "1" },
+      { sl: "A2", code: "CCE-1103", name: "Basic Electrical Engineering", credit: "3" },
+      { sl: "A3", code: "CCE-1104", name: "Basic Electrical Engineering Sessional", credit: "1.5" },
+      { sl: "A4", code: "CCE-1105", name: "Computer Fundamentals and Programming", credit: "3" },
+      { sl: "A5", code: "CCE-1106", name: "Computer Fundamentals and Programming Sessional", credit: "1.5" },
+      { sl: "A6", code: "MATH-1101", name: "Mathematics I (Differential and Integral Calculus)", credit: "3" },
+      { sl: "A7", code: "PHY-1101", name: "Physics I (Mechanics, Waves, Optics, Heat and thermodynamics)", credit: "3" },
+      { sl: "A8", code: "GEEL-1106", name: "Advanced English", credit: "2" },
+      { sl: "A9", code: "GEEM-1101", name: "Text of Ethics and Morality", credit: "1" },
+      { sl: "A10", code: "CCE-1206", name: "Web Programming Sessional", credit: "1.5" },
+      { sl: "A11", code: "CCE-1207", name: "Object Oriented Programming with JAVA", credit: "3" },
+      { sl: "A12", code: "CCE-1208", name: "Object Oriented Programming with JAVA Sessional", credit: "1.5" },
+      { sl: "A13", code: "CCE-1209", name: "Basic Electronics Engineering", credit: "3" },
+      { sl: "A14", code: "CCE-1210", name: "Basic Electronics Engineering Sessional", credit: "1.5" },
+      { sl: "A15", code: "MATH-1201", name: "Mathematics II Geometry and Differential Equations", credit: "3" },
+      { sl: "A16", code: "PHY-1201", name: "Physics II (Electromagnetism, Properties of Matter and Modern Physics)", credit: "3" },
+      { sl: "A17", code: "PHY-1202", name: "Physics II Sessional", credit: "1.5" },
+      { sl: "A18", code: "GEED-1201", name: "Basic Principles of Islam ('Aqeedah+ 'Ibadah)", credit: "2" },
+      { sl: "A19", code: "CCE-2301", name: "Data Structures and Algorithms", credit: "3" },
+      { sl: "A20", code: "CCE-2302", name: "Data Structures and Algorithms Sessional", credit: "1" },
+      { sl: "A21", code: "CCE-2305", name: "Signals and Linear Systems", credit: "2" },
+      { sl: "A22", code: "CCE-2307", name: "Discrete Mathematics", credit: "2" },
+      { sl: "A23", code: "CCE-2310", name: "Competitive Programming Sessional", credit: "1.5" },
+      { sl: "A24", code: "CHEM-2301", name: "Chemistry", credit: "3" },
+      { sl: "A25", code: "CHEM-2302", name: "Chemistry Sessional", credit: "1" },
+      { sl: "A26", code: "MATH-2301", name: "Mathematics III (Matrices, Linear System of Equations and Vector Analysis)", credit: "3" },
+      { sl: "A27", code: "GEED-2302", name: "Science of Qur’an and Hadith", credit: "1" },
+      { sl: "A28", code: "GEED-2305", name: "Comparative Religion", credit: "3" },
+      { sl: "A29", code: "CCE-2401", name: "Numerical Methods", credit: "2" },
+      { sl: "A30", code: "CCE-2406", name: "Python Programming Sessional", credit: "1.5" },
+      { sl: "A31", code: "CCE-2407", name: "Basic Communication Engineering", credit: "3" },
+      { sl: "A32", code: "CCE-2408", name: "Basic Communication Engineering Sessional", credit: "1.5" },
+      { sl: "A33", code: "CCE-2411", name: "Digital Logic Design", credit: "3" },
+      { sl: "A34", code: "CCE-2412", name: "Digital Logic Design Sessional", credit: "1.5" },
+      { sl: "A35", code: "GEBL-2401", name: "Bangla Language and Literature", credit: "2" },
+      { sl: "A36", code: "MATH-2401", name: "Mathematics IV (Complex Variable Fourier Series, Laplace Transform)", credit: "3" },
+      { sl: "A37", code: "STAT-2401", name: "Statistics", credit: "2" },
+      { sl: "A38", code: "ACC-3501", name: "Financial and Managerial Accounting", credit: "2" },
+      { sl: "A39", code: "CCE-3501", name: "Microprocessor and Assembly Language", credit: "3" },
+      { sl: "A40", code: "CCE-3502", name: "Microprocessor and Assembly Language Sessional", credit: "1" },
+      { sl: "A41", code: "CCE-3503", name: "Information Theory and Error Correction Coding", credit: "2" },
+      { sl: "A42", code: "CCE-3505", name: "Database Management Systems", credit: "3" },
+      { sl: "A43", code: "CCE-3506", name: "Database Management Systems Sessional", credit: "1" },
+      { sl: "A44", code: "CCE-3507", name: "System Analysis, Design and Development", credit: "2" },
+      { sl: "A45", code: "CCE-3509", name: "Computer Architecture", credit: "3" },
+      { sl: "A46", code: "CCE-3511", name: "Electromagnetic Fields and Waves", credit: "2" },
+      { sl: "A47", code: "GEED-3503", name: "Political Thoughts and Social Behavior", credit: "2" },
+      { sl: "A48", code: "CCE-3601", name: "Digital Signal Processing", credit: "2" },
+      { sl: "A49", code: "CCE-3602", name: "Digital Signal Processing Sessional", credit: "1" },
+      { sl: "A50", code: "CCE-3606", name: "Computer Animation and Game Development Sessional", credit: "1.5" },
+      { sl: "A51", code: "CCE-3607", name: "Cellular Mobile Communication", credit: "2" },
+      { sl: "A52", code: "CCE-3608", name: "Cellular Mobile Communication Sessional", credit: "1" },
+      { sl: "A53", code: "CCE-3609", name: "Software Engineering", credit: "3" },
+      { sl: "A54", code: "CCE-3610", name: "Software Engineering Sessional", credit: "1" },
+      { sl: "A55", code: "CCE-3611", name: "Digital Communication Engineering", credit: "3" },
+      { sl: "A56", code: "CCE-3612", name: "Digital Communication Engineering Sessional", credit: "1.5" },
+      { sl: "A57", code: "ECON-3601", name: "Principles of Economics", credit: "2" },
+      { sl: "A58", code: "MGT-3601", name: "Industrial Management", credit: "2" },
+      { sl: "A59", code: "GEED-3604", name: "Life and Teachings of the Prophet Muhammad (SAAS)", credit: "1" },
+      { sl: "A60", code: "CCE-4701", name: "Data Communication and Computer Networking", credit: "3" },
+      { sl: "A61", code: "CCE-4702", name: "Data Communication and Computer Networking Sessional", credit: "1.5" },
+      { sl: "A62", code: "CCE-4705", name: "Operating Systems", credit: "3" },
+      { sl: "A63", code: "CCE-4706", name: "Operating Systems Sessional", credit: "1" },
+      { sl: "A64", code: "CCE-4707", name: "Microwave Engineering", credit: "2" },
+      { sl: "A65", code: "CCE-4708", name: "Microwave Engineering Sessional", credit: "1" },
+      { sl: "A66", code: "CCE-4711", name: "Satellite Communication and Radar navigation", credit: "2" },
+      { sl: "A67", code: "CCE-4715", name: "Research Methodology", credit: "1" },
+      { sl: "A68", code: "CCE-4717", name: "Digital Image Processing", credit: "2" },
+      { sl: "A69", code: "CCE-4718", name: "Digital Image Processing Sessional", credit: "1" },
+      { sl: "A70", code: "CCE-4719", name: "Internet of Things", credit: "2" },
+      { sl: "A71", code: "CCE-4720", name: "Internet of Things Sessional", credit: "1" },
+      { sl: "A72", code: "CCE-4721", name: "Computer Interfacing", credit: "2" },
+      { sl: "A73", code: "CCE-4722", name: "Computer Interfacing Sessional", credit: "1" },
+      { sl: "A74", code: "CCE-4723", name: "Network Programming", credit: "2" },
+      { sl: "A75", code: "CCE-4724", name: "Network Programming Sessional", credit: "1" },
+      { sl: "A76", code: "CCE-4725", name: "Embedded System Design", credit: "2" },
+      { sl: "A77", code: "CCE-4726", name: "Embedded System Design Sessional", credit: "1" },
+      { sl: "A78", code: "CCE-4727", name: "Robotics and Automation", credit: "2" },
+      { sl: "A79", code: "CCE-4728", name: "Robotics and Automation Sessional", credit: "1" },
+      { sl: "A80", code: "LAW-4721", name: "Professional Ethics and Environmental Protection Law", credit: "2" },
+      { sl: "A81", code: "GEIH-4701", name: "A Survey of Islamic History and Culture", credit: "1" },
+      { sl: "A82", code: "CCE-4800", name: "Project / Thesis", credit: "4" },
+      { sl: "A83", code: "CCE-4801", name: "Fiber Optic Communication", credit: "2" },
+      { sl: "A84", code: "CCE-4802", name: "Fiber Optic Communication Sessional", credit: "1" },
+      { sl: "A85", code: "CCE-4803", name: "Artificial Intelligence", credit: "2" },
+      { sl: "A86", code: "CCE-4804", name: "Artificial Intelligence Sessional", credit: "1" },
+      { sl: "A87", code: "CCE-4805", name: "Compiler Design", credit: "2" },
+      { sl: "A88", code: "CCE-4806", name: "Compiler Design Sessional", credit: "1" },
+      { sl: "A89", code: "CCE-4808", name: "Software Development Sessional", credit: "1.5" },
+      { sl: "A90", code: "CCE-4811", name: "Fault Tolerant Systems", credit: "2" },
+      { sl: "A91", code: "CCE-4812", name: "Fault Tolerant Systems Sessional", credit: "1" },
+      { sl: "A92", code: "CCE-4813", name: "Simulation and Modeling", credit: "2" },
+      { sl: "A93", code: "CCE-4814", name: "Simulation and Modeling Sessional", credit: "1" },
+      { sl: "A94", code: "CCE-4815", name: "Remote Sensing Technology", credit: "2" },
+      { sl: "A95", code: "CCE-4816", name: "Remote Sensing Technology Sessional", credit: "1" },
+      { sl: "A96", code: "CCE-4817", name: "Stochastic Process", credit: "2" },
+      { sl: "A97", code: "CCE-4818", name: "Stochastic Process Sessional", credit: "1" },
+      { sl: "A98", code: "CCE-4819", name: "VLSI System Design and Modeling", credit: "2" },
+      { sl: "A99", code: "CCE-4820", name: "VLSI System Design and Modeling Sessional", credit: "1" },
+      { sl: "A100", code: "CCE-4821", name: "Broadband Communication Networks", credit: "2" },
+      { sl: "A101", code: "CCE-4822", name: "Broadband Communication Networks Sessional", credit: "1" },
+      { sl: "A102", code: "CCE-4823", name: "Biomedical Engineering", credit: "2" },
+      { sl: "A103", code: "CCE-4824", name: "Biomedical Engineering Sessional", credit: "1" },
+      { sl: "A104", code: "CCE-4825", name: "Cryptography and Network Security", credit: "2" },
+      { sl: "A105", code: "CCE-4826", name: "Cryptography and Network Security Sessional", credit: "1" },
+      { sl: "A106", code: "CCE-4827", name: "Neural Network and Fuzzy Logic", credit: "2" },
+      { sl: "A107", code: "CCE-4828", name: "Neural Network and Fuzzy Logic Sessional", credit: "1" },
+      { sl: "A108", code: "CCE-4829", name: "Machine Learning", credit: "2" },
+      { sl: "A109", code: "CCE-4830", name: "Machine Learning Sessional", credit: "1" },
+      { sl: "A110", code: "CCE-4832", name: "General Viva", credit: "1" },
+      { sl: "A111", code: "CCE-4834", name: "Industrial Training/Tour", credit: "1" },
+      { sl: "A112", code: "CCE-4851", name: "Big Data Analytics", credit: "2" },
+      { sl: "A113", code: "CCE-4852", name: "Big Data Analytics Sessional", credit: "1" },
+      { sl: "A114", code: "CCE-4853", name: "Opto-electronics", credit: "2" },
+      { sl: "A115", code: "CCE-4854", name: "Opto-electronics Sessional", credit: "1" },
+      { sl: "A116", code: "GEHE-3601", name: "History of the Emergence of Bangladesh", credit: "2" }
+    ];
+
+    // State Management
+    let savedExams = JSON.parse(localStorage.getItem('cce_saved_exams') || '[]');
+    let currentThemeIndex = 0;
+    
+    // Theme Cycle Order Requested: Dark Red -> Black -> Classic Green -> Light Aqua -> Brown -> Light Yellow -> Dark Red
+    const themes = [
+      { id: "dark-red", label: "Dark Red", icon: "fa-fire" },
+      { id: "black", label: "Black", icon: "fa-moon" },
+      { id: "classic-green", label: "Classic Green", icon: "fa-leaf" },
+      { id: "light-aqua", label: "Light Aqua", icon: "fa-droplet" },
+      { id: "brown", label: "Brown", icon: "fa-cubes" },
+      { id: "light-yellow", label: "Light Yellow", icon: "fa-sun" }
+    ];
+
+    // Single-Page Application (SPA) Stack Navigation
+    let pageStack = ['home'];
+
+    function navigateTo(pageId, pushToHistory = true) {
+      if (pageStack[pageStack.length - 1] === pageId) return;
+
+      pageStack.push(pageId);
+      if (pushToHistory) {
+        history.pushState({ page: pageId }, '', '#' + pageId);
+      }
+      renderPage(pageId);
+    }
+
+    function renderPage(pageId) {
+      document.querySelectorAll('.page-view').forEach(view => view.classList.add('hidden'));
+      const activeView = document.getElementById(`view-${pageId}`);
+      if (activeView) {
+        activeView.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+        // Refresh AOS animations
+        setTimeout(() => { AOS.refresh(); }, 100);
+      }
+    }
+
+    // Native Back Button & Swipe Back Gesture Handler
+    window.addEventListener('popstate', (event) => {
+      if (pageStack.length > 1) {
+        pageStack.pop();
+        const previousPage = pageStack[pageStack.length - 1];
+        renderPage(previousPage);
+      } else {
+        // We are on the Home page, push state again so page doesn't instantly unload
+        history.pushState({ page: 'home' }, '', '#home');
+        openExitModal();
+      }
+    });
+
+    // App Exit Confirmation Modal
+    function openExitModal() {
+      document.getElementById('exitModal').classList.remove('hidden');
+    }
+
+    function closeExitModal() {
+      document.getElementById('exitModal').classList.add('hidden');
+    }
+
+    function confirmExit() {
+      closeExitModal();
+      alert("Exiting CCE Portal... Thank you!");
+      window.location.href = "about:blank";
+    }
+
+    // Cycle Themes Function
+    function cycleTheme() {
+      currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+      const theme = themes[currentThemeIndex];
+      
+      document.documentElement.setAttribute('data-theme', theme.id);
+      document.getElementById('themeLabel').innerText = theme.label;
+      document.getElementById('themeIcon').className = `fa-solid ${theme.icon} text-amber-300 animate-pulse`;
+
+      localStorage.setItem('cce_theme', theme.id);
+    }
+
+    // Smart Navbar Hide / Show on Scroll
+    let lastScrollTop = 0;
+    const floatingNavbar = document.getElementById('floatingNavbar');
+
+    window.addEventListener('scroll', () => {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scrolling Down -> Hide Navbar smoothly
+        floatingNavbar.classList.add('-translate-y-28', 'opacity-0');
+      } else {
+        // Scrolling Up -> Reveal Navbar
+        floatingNavbar.classList.remove('-translate-y-28', 'opacity-0');
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+
+    // Scroll Helper Controls
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    function scrollToBottom() {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+
+    // Global Search Drawer Logic
+    function handleGlobalSearch(query) {
+      const overlay = document.getElementById('searchOverlay');
+      const container = document.getElementById('searchResultsList');
+      const countLabel = document.getElementById('searchResultCount');
+      const clearBtn = document.getElementById('clearSearchBtn');
+
+      if (!query.trim()) {
+        overlay.classList.add('hidden');
+        clearBtn.classList.add('hidden');
+        return;
+      }
+
+      clearBtn.classList.remove('hidden');
+      const q = query.toLowerCase().trim();
+      let matches = [];
+
+      // Search across Routine Data
+      routineData.forEach(item => {
+        item.slot1.concat(item.slot2).forEach(sub => {
+          if (sub.code.toLowerCase().includes(q) || sub.title.toLowerCase().includes(q)) {
+            matches.push({ type: 'routine', date: item.date, day: item.day, code: sub.code, title: sub.title });
+          }
+        });
+      });
+
+      // Search across Course Catalog
+      coursesData.forEach(c => {
+        if (c.code.toLowerCase().includes(q) || c.name.toLowerCase().includes(q) || c.sl.toLowerCase().includes(q)) {
+          if (!matches.some(m => m.code === c.code)) {
+            matches.push({ type: 'catalog', code: c.code, title: c.name, credit: c.credit, sl: c.sl });
+          }
+        }
+      });
+
+      countLabel.innerText = `${matches.length} matches`;
+      overlay.classList.remove('hidden');
+
+      if (matches.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full text-center py-6 text-theme-muted text-xs">
+            No matching exams or courses found for "${query}".
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = matches.map(m => `
+        <div class="glass-card rounded-xl p-3 border border-white/10 hover:border-red-500/50 flex items-center justify-between gap-3">
+          <div class="text-left">
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-xs font-bold text-red-400">${m.code}</span>
+              ${m.type === 'routine' ? `<span class="text-[10px] bg-red-950/60 px-2 py-0.5 rounded text-red-300 font-mono">${m.date} (${m.day})</span>` : `<span class="text-[10px] bg-cyan-950/60 px-2 py-0.5 rounded text-cyan-300 font-mono">${m.credit} Credit</span>`}
+            </div>
+            <h4 class="text-xs font-semibold text-white mt-1">${m.title}</h4>
+          </div>
+          <button onclick="toggleSaveExam('${m.code}', '${m.title.replace(/'/g, "\\'")}')" class="p-2 rounded-lg bg-white/10 hover:bg-red-600 text-xs text-white transition-colors">
+            <i class="fa-solid ${isSaved(m.code) ? 'fa-bookmark text-amber-400' : 'fa-plus'}"></i>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function clearSearch() {
+      document.getElementById('globalSearchInput').value = '';
+      document.getElementById('searchOverlay').classList.add('hidden');
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+    }
+
+    // Render Full Routine Schedule Cards
+    function renderRoutine(data = routineData) {
+      const container = document.getElementById('routineCardsContainer');
+      
+      if (data.length === 0) {
+        container.innerHTML = `
+          <div class="glass-card rounded-2xl p-8 text-center text-theme-muted text-sm">
+            No exam routine records match your current filter criteria.
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = data.map(dayItem => `
+        <div class="glass-card rounded-2xl p-5 border border-white/10 space-y-4" data-aos="fade-up">
+          
+          <!-- Date Header -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-white/10 gap-2">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-600 to-rose-900 flex flex-col items-center justify-center text-white font-mono shadow-md">
+                <span class="text-xs font-bold">${dayItem.date.split('/')[0]}</span>
+                <span class="text-[9px] uppercase font-semibold">${getDayAbbrev(dayItem.day)}</span>
+              </div>
+              <div>
+                <h3 class="text-lg font-black tracking-wide">${dayItem.day}</h3>
+                <span class="text-xs text-theme-muted font-mono">Date: ${dayItem.date}</span>
+              </div>
+            </div>
+            <div class="text-xs text-theme-muted bg-black/30 px-3 py-1.5 rounded-xl border border-white/5 font-mono">
+              Total Exams: ${(dayItem.slot1?.length || 0) + (dayItem.slot2?.length || 0)}
+            </div>
+          </div>
+
+          <!-- Slots Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            
+            <!-- 1st Slot -->
+            <div class="bg-black/30 rounded-xl p-3 border border-red-500/20 space-y-2">
+              <div class="flex items-center justify-between pb-1 border-b border-white/5 text-xs text-red-400 font-bold font-mono">
+                <span><i class="fa-solid fa-sun mr-1"></i> 1ST SLOT (09:30 - 11:00 AM)</span>
+                <span>${dayItem.slot1 ? dayItem.slot1.length : 0} Subjects</span>
+              </div>
+              <div class="space-y-2 pt-1">
+                ${dayItem.slot1 && dayItem.slot1.length > 0 ? dayItem.slot1.map(sub => `
+                  <div class="glass-card rounded-lg p-2.5 flex items-center justify-between gap-2 hover:border-red-500/40 transition-colors">
+                    <div>
+                      <span class="font-mono text-xs font-bold text-red-300 block">${sub.code}</span>
+                      <span class="text-xs text-white/90 leading-tight block">${sub.title}</span>
+                    </div>
+                    <button onclick="toggleSaveExam('${sub.code}', '${sub.title.replace(/'/g, "\\'")}', '${dayItem.date}', '${dayItem.day}', '1st Slot')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-amber-600 text-xs font-semibold text-white transition-colors flex items-center gap-1 shrink-0">
+                      <i class="fa-solid ${isSaved(sub.code) ? 'fa-check text-amber-300' : 'fa-plus'}"></i>
+                      <span>${isSaved(sub.code) ? 'Saved' : 'Add'}</span>
+                    </button>
+                  </div>
+                `).join('') : `<p class="text-xs text-theme-muted/60 italic py-2 text-center">No exams scheduled</p>`}
+              </div>
+            </div>
+
+            <!-- 2nd Slot -->
+            <div class="bg-black/30 rounded-xl p-3 border border-rose-500/20 space-y-2">
+              <div class="flex items-center justify-between pb-1 border-b border-white/5 text-xs text-rose-400 font-bold font-mono">
+                <span><i class="fa-solid fa-cloud-sun mr-1"></i> 2ND SLOT (02:30 - 04:00 PM)</span>
+                <span>${dayItem.slot2 ? dayItem.slot2.length : 0} Subjects</span>
+              </div>
+              <div class="space-y-2 pt-1">
+                ${dayItem.slot2 && dayItem.slot2.length > 0 ? dayItem.slot2.map(sub => `
+                  <div class="glass-card rounded-lg p-2.5 flex items-center justify-between gap-2 hover:border-rose-500/40 transition-colors">
+                    <div>
+                      <span class="font-mono text-xs font-bold text-rose-300 block">${sub.code}</span>
+                      <span class="text-xs text-white/90 leading-tight block">${sub.title}</span>
+                    </div>
+                    <button onclick="toggleSaveExam('${sub.code}', '${sub.title.replace(/'/g, "\\'")}', '${dayItem.date}', '${dayItem.day}', '2nd Slot')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-amber-600 text-xs font-semibold text-white transition-colors flex items-center gap-1 shrink-0">
+                      <i class="fa-solid ${isSaved(sub.code) ? 'fa-check text-amber-300' : 'fa-plus'}"></i>
+                      <span>${isSaved(sub.code) ? 'Saved' : 'Add'}</span>
+                    </button>
+                  </div>
+                `).join('') : `<p class="text-xs text-theme-muted/60 italic py-2 text-center">No exams scheduled</p>`}
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      `).join('');
+    }
+
+    function getDayAbbrev(day) {
+      return day.substring(0, 3);
+    }
+
+    // Filter Full Routine
+    function filterRoutine() {
+      const slotVal = document.getElementById('slotFilter').value;
+      const searchVal = document.getElementById('routineSearchInput').value.toLowerCase().trim();
+
+      let filtered = routineData.map(item => {
+        let slot1 = item.slot1 || [];
+        let slot2 = item.slot2 || [];
+
+        if (slotVal === 'slot1') slot2 = [];
+        if (slotVal === 'slot2') slot1 = [];
+
+        if (searchVal) {
+          slot1 = slot1.filter(s => s.code.toLowerCase().includes(searchVal) || s.title.toLowerCase().includes(searchVal));
+          slot2 = slot2.filter(s => s.code.toLowerCase().includes(searchVal) || s.title.toLowerCase().includes(searchVal));
+        }
+
+        return { ...item, slot1, slot2 };
+      }).filter(item => (item.slot1 && item.slot1.length > 0) || (item.slot2 && item.slot2.length > 0));
+
+      renderRoutine(filtered);
+    }
+
+    // Bookmark Saved Exam Logic
+    function isSaved(code) {
+      return savedExams.some(e => e.code === code);
+    }
+
+    function toggleSaveExam(code, title, date = "", day = "", slot = "") {
+      if (isSaved(code)) {
+        savedExams = savedExams.filter(e => e.code !== code);
+      } else {
+        // If date/slot is missing, find it in routineData
+        if (!date) {
+          routineData.forEach(d => {
+            d.slot1.forEach(s => { if (s.code === code) { date = d.date; day = d.day; slot = "1st Slot (09:30-11:00 AM)"; } });
+            d.slot2.forEach(s => { if (s.code === code) { date = d.date; day = d.day; slot = "2nd Slot (02:30-04:00 PM)"; } });
+          });
+        }
+        savedExams.push({ code, title, date: date || 'N/A', day: day || 'N/A', slot: slot || 'N/A' });
+      }
+
+      localStorage.setItem('cce_saved_exams', JSON.stringify(savedExams));
+      updateSavedBadge();
+      renderRoutine();
+      renderMySavedExams();
+    }
+
+    function updateSavedBadge() {
+      const badge = document.getElementById('savedCountBadge');
+      if (savedExams.length > 0) {
+        badge.innerText = savedExams.length;
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+    }
+
+    function clearSavedExams() {
+      if (confirm("Clear all subjects from your saved exam roadmap?")) {
+        savedExams = [];
+        localStorage.removeItem('cce_saved_exams');
+        updateSavedBadge();
+        renderRoutine();
+        renderMySavedExams();
+      }
+    }
+
+    // Render Saved Schedule Roadmap View
+    function renderMySavedExams() {
+      const container = document.getElementById('mySavedExamsContainer');
+      const clashBox = document.getElementById('clashWarningBox');
+      const clashText = document.getElementById('clashWarningText');
+
+      if (savedExams.length === 0) {
+        clashBox.classList.add('hidden');
+        container.innerHTML = `
+          <div class="glass-card rounded-2xl p-10 text-center space-y-3">
+            <i class="fa-solid fa-folder-open text-4xl text-amber-400/50"></i>
+            <h3 class="text-lg font-bold">No Enrolled Exams Saved</h3>
+            <p class="text-xs text-theme-muted max-w-sm mx-auto">Click "+ Add" on any course in the routine to pin your mid-term subjects here.</p>
+            <button onclick="navigateTo('routine')" class="px-4 py-2 rounded-xl bg-red-600 text-white text-xs font-bold hover:bg-red-500 transition-all">
+              Browse Full Routine
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      // Check for Schedule Clashes
+      const slotMap = {};
+      let clashes = [];
+
+      savedExams.forEach(e => {
+        if (e.date !== 'N/A' && e.slot !== 'N/A') {
+          const key = `${e.date}_${e.slot}`;
+          if (slotMap[key]) {
+            clashes.push(`${e.code} and ${slotMap[key]} on ${e.date} (${e.slot})`);
+          } else {
+            slotMap[key] = e.code;
+          }
+        }
+      });
+
+      if (clashes.length > 0) {
+        clashText.innerText = clashes.join('; ');
+        clashBox.classList.remove('hidden');
+      } else {
+        clashBox.classList.add('hidden');
+      }
+
+      container.innerHTML = savedExams.map((e, idx) => `
+        <div class="glass-card rounded-2xl p-4 border border-amber-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-md bg-amber-950/80 border border-amber-500/40 text-amber-300 font-mono text-xs font-bold">${e.code}</span>
+              <span class="text-xs font-mono text-theme-muted"><i class="fa-solid fa-calendar mr-1"></i> ${e.date} (${e.day})</span>
+            </div>
+            <h4 class="text-sm font-bold text-white">${e.title}</h4>
+            <p class="text-xs text-theme-muted"><i class="fa-solid fa-clock mr-1"></i> ${e.slot}</p>
+          </div>
+          <button onclick="toggleSaveExam('${e.code}', '')" class="px-3 py-1.5 rounded-xl bg-red-950/80 hover:bg-red-900 border border-red-500/30 text-red-300 text-xs font-semibold transition-all flex items-center gap-1 self-end sm:self-center">
+            <i class="fa-solid fa-trash-can"></i> Remove
+          </button>
+        </div>
+      `).join('');
+    }
+
+    // Render Complete 116 Courses Catalog
+    function renderCourseCatalog(courses = coursesData) {
+      const container = document.getElementById('courseCatalogGrid');
+
+      if (courses.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full glass-card rounded-2xl p-8 text-center text-theme-muted text-sm">
+            No course syllabus found matching your search.
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = courses.map(c => {
+        // Check if course has a scheduled exam
+        let examInfo = null;
+        routineData.forEach(r => {
+          r.slot1.forEach(s => { if (s.code === c.code) examInfo = { date: r.date, slot: "1st Slot" }; });
+          r.slot2.forEach(s => { if (s.code === c.code) examInfo = { date: r.date, slot: "2nd Slot" }; });
+        });
+
+        return `
+          <div class="glass-card rounded-xl p-4 border border-white/10 hover:border-cyan-500/40 transition-all flex flex-col justify-between space-y-3">
+            <div>
+              <div class="flex items-center justify-between text-xs mb-2">
+                <span class="font-mono font-bold text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-500/20">${c.code}</span>
+                <span class="text-theme-muted font-mono font-semibold">${c.sl} | ${c.credit} Cr</span>
+              </div>
+              <h4 class="text-xs font-bold text-white leading-snug">${c.name}</h4>
+            </div>
+
+            <div class="pt-2 border-t border-white/5 flex items-center justify-between text-[11px]">
+              ${examInfo ? `
+                <span class="text-red-400 font-mono font-medium flex items-center gap-1">
+                  <i class="fa-solid fa-calendar-day"></i> ${examInfo.date} (${examInfo.slot})
+                </span>
+              ` : `<span class="text-theme-muted/60 italic">No Mid-Term Exam</span>`}
+
+              <button onclick="toggleSaveExam('${c.code}', '${c.name.replace(/'/g, "\\'")}')" class="text-xs text-white/70 hover:text-amber-400 font-bold flex items-center gap-1">
+                <i class="fa-solid ${isSaved(c.code) ? 'fa-bookmark text-amber-400' : 'fa-plus'}"></i>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function filterCourseCatalog() {
+      const level = document.getElementById('levelFilter').value;
+      const search = document.getElementById('catalogSearchInput').value.toLowerCase().trim();
+
+      let filtered = coursesData.filter(c => {
+        let matchLevel = true;
+        if (level !== 'all') {
+          // Extract first digit after hyphen e.g. CCE-3501 -> 3
+          const match = c.code.match(/-\s*(\d)/);
+          if (match) {
+            matchLevel = match[1] === level;
+          }
+        }
+
+        let matchSearch = true;
+        if (search) {
+          matchSearch = c.code.toLowerCase().includes(search) || c.name.toLowerCase().includes(search) || c.sl.toLowerCase().includes(search);
+        }
+
+        return matchLevel && matchSearch;
+      });
+
+      renderCourseCatalog(filtered);
+    }
+
+    // Countdown Timer Logic to 30 Sept 2026 09:30 AM
+    function initCountdown() {
+      const examDate = new Date("2026-09-30T09:30:00").getTime();
+
+      setInterval(() => {
+        const now = new Date().getTime();
+        const diff = examDate - now;
+
+        if (diff <= 0) {
+          document.getElementById('countdownTimer').innerHTML = `
+            <div class="col-span-4 text-center text-red-400 font-bold py-2">
+              EXAMINATION IS IN PROGRESS!
+            </div>
+          `;
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('cd-days').innerText = String(days).padStart(2, '0');
+        document.getElementById('cd-hours').innerText = String(hours).padStart(2, '0');
+        document.getElementById('cd-mins').innerText = String(mins).padStart(2, '0');
+        document.getElementById('cd-secs').innerText = String(secs).padStart(2, '0');
+      }, 1000);
+    }
+
+    // On Application Load Initialization
+    window.addEventListener('DOMContentLoaded', () => {
+      // Saved Theme
+      const savedTheme = localStorage.getItem('cce_theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        const tIndex = themes.findIndex(t => t.id === savedTheme);
+        if (tIndex !== -1) {
+          currentThemeIndex = tIndex;
+          document.getElementById('themeLabel').innerText = themes[tIndex].label;
+          document.getElementById('themeIcon').className = `fa-solid ${themes[tIndex].icon} text-amber-300 animate-pulse`;
+        }
+      }
+
+      // Initializing state stack history
+      history.replaceState({ page: 'home' }, '', '#home');
+
+      // Render initial components
+      renderRoutine();
+      renderMySavedExams();
+      renderCourseCatalog();
+      updateSavedBadge();
+      initCountdown();
+    });
+  </script>
+
+</body>
+</html>
